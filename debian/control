@@ -1,0 +1,29 @@
+Source: lightdm-gtk-greeter
+Section: x11
+Priority: optional
+XSBC-Original-Maintainer: Debian Xfce Maintainers <debian-xfce@lists.debian.org>
+Maintainer: Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>
+Uploaders: Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>
+Build-Depends: debhelper-compat (= 12),
+               intltool,
+               libgtk-3-dev,
+               libindicator3-dev,
+               liblightdm-gobject-dev (>= 1.19.2),
+               pkg-config
+Standards-Version: 4.5.0
+Homepage: https://launchpad.net/lightdm-gtk-greeter
+Vcs-Git: https://gitlab.com/kaisenlinux/packages/lightdm-gtk-greeter.git
+Vcs-Browser: https://gitlab.com/kaisenlinux/packages/lightdm-gtk-greeter
+
+Package: lightdm-gtk-greeter
+Provides: lightdm-greeter
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: desktop-base,
+            adwaita-icon-theme,
+            gnome-themes-extra,
+            policykit-1
+Description: simple display manager (GTK+ greeter)
+ lightdm-gtk-greeter is greeter shell for the LightDM login manager. It uses
+ the GTK+ toolkit and integrates well with desktop environment using that
+ toolkit, like the Xfce desktop environment.

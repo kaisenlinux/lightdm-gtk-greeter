@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+export DEB_LDFLAGS_MAINT_APPEND=-Wl,--as-needed -Wl,-O1
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		--disable-silent-rules \
+		--enable-kill-on-sigterm \
+		--disable-Werror \
+		--enable-libindicator
+
+override_dh_install:
+	dh_install debian/01_debian.conf usr/share/lightdm/lightdm-gtk-greeter.conf.d/
+
+%:
+	dh $@

@@ -1,0 +1,340 @@
+lightdm-gtk-greeter (2.0.8-1+kaisen1) kaisen-devel; urgency=medium
+
+  * Forked for Kaisen Linux configuration
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>  Tue, 18 Aug 2020 19:10:03 +0200
+
+lightdm-gtk-greeter (2.0.8-1) unstable; urgency=medium
+
+  * d/watch updated following Github migration
+  * New upstream version 2.0.8
+  * d/control: update standards version to 4.5.0
+  * migrate to debhelper-compat for dh compat level
+  * d/control: update build-deps for new release
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 24 Jun 2020 18:00:13 +0200
+
+lightdm-gtk-greeter (2.0.7-1) unstable; urgency=medium
+
+  * d/control: update dh compat level to 12
+  * d/control: update standards version to 4.4.1
+  * d/watch: update with uscan special strings
+  * New upstream version 2.0.7
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 31 Dec 2019 12:59:29 +0100
+
+lightdm-gtk-greeter (2.0.6-1) unstable; urgency=medium
+
+  * New upstream version 2.0.6
+  * d/control: drop Simon and Emanuele from uploaders, thanks!
+  * d/control: update standards version to 4.3.0
+  * d/control: drop obsolete breaks/replaces
+  * d/control: slightly update long description
+  * update debhelper compat to 10
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Thu, 27 Dec 2018 17:15:47 +0100
+
+lightdm-gtk-greeter (2.0.5-1) unstable; urgency=medium
+
+  * debian/control: fix URI for Vcs-*
+  * d/control: replace gnome-themes-standard by gnome-themes-extra
+    (closes: #892036)
+  * New upstream version 2.0.5
+  * update copyright for new upstream release
+  * d/p/01_add_back_power_indicator dropped, included upstream
+  * d/gbp.conf added, following DEP-14
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 21 May 2018 15:54:11 +0200
+
+lightdm-gtk-greeter (2.0.4-1) unstable; urgency=medium
+
+  * debian/control:
+    - replace gnome-icon-theme-symbolic by adwaita-icon-theme.  closes: #884412
+  * Moved the package to git on salsa.debian.org
+  * Updated the maintainer address to debian-xfce@lists.debian.org
+  * New upstream version 2.0.4
+  * enable libindicator support
+  * d/p/01_add_back_power_indicator added (closes: #884097)
+  * d/patches: remove obsolete and unapplier at_spi patch
+  * debian/copyright: update for new release
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 21 Feb 2018 11:34:28 +0100
+
+lightdm-gtk-greeter (2.0.3-1) unstable; urgency=medium
+
+  * New upstream release.
+    - fix hangs when Orca is enabled.                           closes: #883215
+    - drop deprecated gnome-common macros usage.                closes: #829931
+  * debian/patches:
+    - 01_at-spi disabled for now: it doesn't apply anymore, and there are
+    ongoing discussions on how to handle a11y properly.
+  * Run wrap-and-sort.
+  * debian/rules:
+    - drop call to autotools-dev addon.
+    - force-disable build with -Werror: LGG 2.0.3 enforce build with -Werror,
+    and it fails because Debian uses -Wdate-time (for build reproducibility)
+    and LGG uses __DATE__ and __TIME__.
+  * debian/contro:
+    - replace autotools-dev build-dep by debhelper >= 9.20160115.
+    - update standards version to 4.1.2.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 10 Dec 2017 00:38:30 +0100
+
+lightdm-gtk-greeter (2.0.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control:
+    - add build-dep on exo-utils for exo-csource.
+    - update standards version to 3.9.8.
+  * debian/patches:
+    - 01_at-spi added, fix accessibility.                       closes: #802220
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 16 Nov 2016 21:48:17 +0100
+
+lightdm-gtk-greeter (2.0.1-2) unstable; urgency=medium
+
+  * debian/rules:
+    - use --enable-kill-on-sigterm for configure, prevents spawning new VTs
+      when using GTK 3.16.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 21 Jun 2015 11:12:26 +0200
+
+lightdm-gtk-greeter (2.0.1-1) unstable; urgency=medium
+
+  * New upstream release:
+    - fix multiple issues in multi-monitor setup.               closes: #785055
+  * debian/01_debian.conf: 
+    - add Debian default configuration
+  * debian/rules:
+    - ship Debian configuration in newly supported
+    /u/s/lightdm/lightdm-gtk-greeter.conf.d folder.
+  * debian/patches:
+    - 04_default-gtk-greeter-config dropped, we use config folders now.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Thu, 21 May 2015 23:25:38 +0200
+
+lightdm-gtk-greeter (2.0.0-3) unstable; urgency=medium
+
+  * debian/patches:
+    - 04_default-gtk-greeter-config: stop overriding upstream configuration
+    for indicators, brings the clock back.                      closes: #784627
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 12 May 2015 20:51:05 +0200
+
+lightdm-gtk-greeter (2.0.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 06 May 2015 22:47:48 +0200
+
+lightdm-gtk-greeter (2.0.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * debian/patches:
+    - 01_unset_AT_SPI_BUS-X11-property dropped, normally not needed anymore.
+    - 04_default-gtk-greeter-config refreshed for new upstream.
+  * debian/control:
+    - update standards version to 3.9.6.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Fri, 13 Mar 2015 22:40:19 +0100
+
+lightdm-gtk-greeter (1.8.5-2) unstable; urgency=medium
+
+  * debian/control, debian/copyright:
+    - patch from Artur Rona to fix various lintian warnings.    closes: #750901
+  * debian/patches:
+    - 01_unset_AT_SPI_BUS-X11-property added, unset AT_SPI_BUS property from
+     the root window.                                           closes: #760740
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Fri, 21 Nov 2014 18:03:40 +0100
+
+lightdm-gtk-greeter (1.8.5-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 06 May 2014 07:43:18 +0200
+
+lightdm-gtk-greeter (1.8.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 22 Apr 2014 23:15:46 +0200
+
+lightdm-gtk-greeter (1.8.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/upstream/signing-key.asc with upstream public PGP key.
+  * debian/watch:
+    - add pgpsigurlmangle option to check the package signature
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 25 Mar 2014 22:01:50 +0100
+
+lightdm-gtk-greeter (1.8.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 02 Mar 2014 16:35:35 +0100
+
+lightdm-gtk-greeter (1.8.1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * debian/patches:
+    - 07_fix-NULL-username dropped, included upstream.
+    - 04_default-gtk-greeter-config refreshed.
+  * debian/lightdm-xsession.desktop: drop file from source package, it's for
+    lightdm actually.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 12 Feb 2014 21:10:12 +0100
+
+lightdm-gtk-greeter (1.7.0-2) experimental; urgency=medium
+
+  * debian/patches:
+    - 07_fix-NULL-username added, fix crash when last username is empty. This
+      is CVE-2014-0979.                                         closes: #734472
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 07 Jan 2014 23:33:38 +0100
+
+lightdm-gtk-greeter (1.7.0-1) experimental; urgency=medium
+
+  * New upstream development release.
+  * debian/patches:
+    - 04_default-gtk-greeter-config refreshed.
+    - 05_add-enter-shortcut-switch-login-password-fields dropped, included
+      upstream.
+    -06_support-session-select-before-authentication dropped, included
+      upstream. 
+  * debian/control:
+    - update standards version to 3.9.5.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 29 Dec 2013 22:20:37 +0100
+
+lightdm-gtk-greeter (1.6.1-5) unstable; urgency=high
+
+  * debian/patches:
+    - 07_fix-NULL-username addef, fix crash when last username is empty. This
+      is CVE-2014-0979.                                         closes: #734472
+  * debian/control:
+    - update standards version to 3.9.5.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 07 Jan 2014 23:33:27 +0100
+
+lightdm-gtk-greeter (1.6.1-4) unstable; urgency=low
+
+  * debian/control:
+    - replace gnome-icon-theme by gnome-icon-theme-symbolic.
+  * debian/patches:
+    - 06_support-session-select-before-authentication updated fix typo.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 18 Nov 2013 21:00:24 +0100
+
+lightdm-gtk-greeter (1.6.1-3) unstable; urgency=low
+
+  * debian/patches:
+    - 05_add-enter-shortcut-switch-login-password-fields added, cherry
+      picked from upstream. support Enter key to move from login to password
+      field.                                                    closes: #727718
+    - 06_support-session-select-before-authentication added, fix session and
+      languages selected in the menu not actually set for the current session.
+                                                                closes: #717702
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Thu, 31 Oct 2013 09:51:34 +0100
+
+lightdm-gtk-greeter (1.6.1-2) unstable; urgency=low
+
+  * debian/patches:
+    - 04_default-gtk-greeter-config: correct comment for hinting.
+                                                       (really) closes: #712434
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 09 Oct 2013 21:59:12 +0200
+
+lightdm-gtk-greeter (1.6.1-1) unstable; urgency=low
+
+  [ Yves-Alexis Perez ]
+  * New upstream release.
+  * debian/patches:
+    - 04_default-gtk-greeter-config: correct value for hinting. closes: #712434
+
+  [ Evgeni Golov ]
+  * Correct Vcs-* URLs to point to anonscm.debian.org
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sat, 21 Sep 2013 23:40:56 +0200
+
+lightdm-gtk-greeter (1.6.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - update standards version to 3.9.4.
+    - add build-dep on autotools-dev.
+  * debian/patches:
+    - 04_default-gtk-greeter-config refresh for new upstream.
+  * debian/rules:
+    - use autotools-dev addon to rebuild config.{guess,sub} since they are
+      older than apr 2012.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 03 Jun 2013 22:55:50 +0200
+
+lightdm-gtk-greeter (1.5.1-3) unstable; urgency=low
+
+  * debian/control:
+    - update liblightdm build-dependency to 1.3.5.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 05 May 2013 15:39:40 +0200
+
+lightdm-gtk-greeter (1.5.1-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 05 May 2013 14:16:14 +0200
+
+lightdm-gtk-greeter (1.5.1-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/rules:
+    - enable all hardening flags.
+  * debian/patches:
+    - 04_default-gtk-greeter-config refreshed.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 07 Apr 2013 14:34:20 +0200
+
+lightdm-gtk-greeter (1.3.1-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/patches:
+    - 04_default-gtk-greeter-config refreshed.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 07 Oct 2012 09:38:09 +0200
+
+lightdm-gtk-greeter (1.1.6-2) unstable; urgency=low
+
+  * debian/patches:
+    - 04_default-gtk-greeter-config updated, use login-background from
+      desktop-base.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Fri, 22 Jun 2012 08:40:58 +0200
+
+lightdm-gtk-greeter (1.1.6-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches:
+    - 01_fix-cancel-authentication dropped, included upstream.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 21 May 2012 21:40:54 +0200
+
+lightdm-gtk-greeter (1.1.5-2) unstable; urgency=low
+
+  * Upload to unstable.
+  * debian/patches:
+    - 01_fix-cancel-authentication added, fix issue which prevents cancelling
+      an authentication process.
+  * debian/rules:
+    - build with --parallel.
+  * debian/lightdm-gtk-greeter.lintian-overrides added, add override for
+    hardening checks and missing manpages.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 15 May 2012 22:52:07 +0200
+
+lightdm-gtk-greeter (1.1.5-1) experimental; urgency=low
+
+  * Initial release.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Fri, 06 Apr 2012 21:42:53 +0200

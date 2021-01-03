@@ -1,3 +1,28 @@
+lightdm-gtk-greeter (2.0.8-2kaisen1) kaisen-packages; urgency=medium
+
+  * Import new upstream release
+  * New lockscreen
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>  Sat, 03 Jan 2020 01:55:36 +0200
+
+lightdm-gtk-greeter (2.0.8-2) unstable; urgency=medium
+
+  [ Thomas ]
+  * Set "orca=reader" in 01_debian.conf
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit (from ./configure),
+    Repository, Repository-Browse.
+
+  [ Unit 193 ]
+  * d/control: Switch from Ubuntu indicators to Ayatana indicators.
+
+  [ Yves-Alexis Perez ]
+  * lintian: drop unused invalid tag override
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 04 Nov 2020 17:56:54 +0100
+
 lightdm-gtk-greeter (2.0.8-1+kaisen3) kaisen-packages; urgency=medium
 
   * Change lightdm wallpaper

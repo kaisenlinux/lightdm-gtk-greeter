@@ -1,3 +1,1 @@
-kaisenlinux-gtk-greeter-conf.patch
-kaisen-lightdm-conf-1.5-rolling.patch
-000-update-wallpaper.patch
+000-applying-kaisenlinux-lightdm-conf.patch

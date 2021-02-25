@@ -1,8 +1,8 @@
-Author: Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>
+Author: Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>
 
 --- lightdm-gtk-greeter-2.0.8.orig/data/lightdm-gtk-greeter.conf
 +++ lightdm-gtk-greeter-2.0.8/data/lightdm-gtk-greeter.conf
-@@ -1,65 +1,9 @@
+@@ -1,65 +1,10 @@
 -# LightDM GTK+ Configuration
 -# Available configuration options listed below.
 -#
@@ -68,11 +68,12 @@ Author: Kevin Chevreuil - Kaisen <kaisen@kaisen-linux.org>
 -#reader=
 -#position=
 -#screensaver-timeout=
-+background = /usr/share/backgrounds/line-white/3840x2160.png
++background = /usr/share/backgrounds/dna-center/3840x2160.png
 +theme-name = Kaisen-Dark-Material
 +icon-theme-name = Kaisen
 +default-user-image = /usr/share/icons/Kaisen/kaisen.png
 +user-background = false
 +font-name = Cantarell 11
 +clock-format = %A %d %B %Y : %H:%M:%S
-+indicators = ~spacer;~spacer;~host;~spacer;~clock;~power
++indicators = ~spacer;~spacer;~host;~spacer;~session;~clock;~power
++
